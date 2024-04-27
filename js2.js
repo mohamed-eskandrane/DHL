@@ -661,9 +661,9 @@ function ShowResultDiv(BasicPrice,ValueB,Method00,WeightT,LengthT){
   let MyPer=document.getElementById("MyPer");
   let AllTotalPrice=document.getElementById("AllTotalPrice");
   if(MyPer.value!=0 && MyPer.value<=100){
-    AllTotalPrice.value=TotalPrice.value * MyPer.value/100 +  Number(TotalPrice.value);
+    AllTotalPrice.value=RoundNumbers(TotalPrice.value * MyPer.value/100 + Number(TotalPrice.value),2);
   }else{
-    AllTotalPrice.value=TotalPrice.value
+    AllTotalPrice.value=RoundNumbers(TotalPrice.value,2);
   }
 }
 
@@ -678,9 +678,9 @@ function ReCaluclateOthers(){
   OtherPrice.value=Others;
   TotalPrice.value= RoundNumbers(ValueB + Others,2);
   if(MyPer.value!=0 && MyPer.value<=100){
-    AllTotalPrice.value=TotalPrice.value * MyPer.value/100 + Number(TotalPrice.value);
+    AllTotalPrice.value=RoundNumbers(TotalPrice.value * MyPer.value/100 + Number(TotalPrice.value),2);
   }else{
-    AllTotalPrice.value=TotalPrice.value
+    AllTotalPrice.value=RoundNumbers(TotalPrice.value,2);
   }
   
 }
