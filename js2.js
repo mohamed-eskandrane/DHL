@@ -364,15 +364,15 @@ function LoadAddressList(){
     if(Num!=""){
       optionClass=document.createElement("option");
       optionClass.value=Countries_Ar;
-      optionClass.textContent=Countries;
+      optionClass.textContent=Countries_Ar;
       AddressList.appendChild(optionClass);
       optionClass=document.createElement("option");
       optionClass.value=Countries_Ar;
-      optionClass.textContent=Countries;
+      optionClass.textContent=Countries_Ar;
       AddressList1.appendChild(optionClass);
       optionClass=document.createElement("option");
       optionClass.value=Countries_Ar;
-      optionClass.textContent=Countries;
+      optionClass.textContent=Countries_Ar;
       AddressList2.appendChild(optionClass);
     }
   }
@@ -650,6 +650,7 @@ function ShowResultDiv(BasicPrice,ValueB,Method00,WeightT,LengthT){
             Count++
         }
       }
+    Mval=0;
     }
   ResultDiv.style.display="flex";
   OtherPriceDiv.style.display="flex";
