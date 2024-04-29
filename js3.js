@@ -390,7 +390,7 @@ function LoadAddressList11(){
     if(Num!=""){
       optionClass=document.createElement("option");
       optionClass.value=Countries_Ar;
-      optionClass.textContent=Countries;
+      optionClass.textContent=Countries_Ar;
       AddressList.appendChild(optionClass);
     }
   }
@@ -623,8 +623,9 @@ function ShowResultDiv(BasicPrice,ValueB,Method00,WeightT,LengthT){
   let Count=0;
   for (let index = 0; index < DataOtherPrices.length; index++) {
     if(DataOtherPrices[index].Num!=""){
+    Mval=0;
+     Clicked=""; 
       if((DataOtherPrices[index].DHL==Method00|| DataOtherPrices[index].DHL=="All") && (DataOtherPrices[index].type==TypeShipStr || DataOtherPrices[index].type=="All")){
-        Clicked="";
         if(DataOtherPrices[index].Unite=="Ship"){
             Mval=DataOtherPrices[index].Amount;
         }else{
@@ -635,12 +636,16 @@ function ShowResultDiv(BasicPrice,ValueB,Method00,WeightT,LengthT){
           }
         }
         if(DataOtherPrices[index].lenth!=0){
-          Clicked="checked";
-            if(LengthT>Number(DataOtherPrices[index].lenth)){Mval=DataOtherPrices[index].Amount}
+            if(LengthT>Number(DataOtherPrices[index].lenth)){
+               Clicked="checked";
+              Mval=DataOtherPrices[index].Amount;
+            }
         }
         if(DataOtherPrices[index].Wiht!=0){
-          Clicked="checked";
-            if(WeightT>Number(DataOtherPrices[index].Wiht)){Mval=DataOtherPrices[index].Amount}
+            if(WeightT>Number(DataOtherPrices[index].Wiht)){
+              Clicked="checked";
+              Mval=DataOtherPrices[index].Amount;
+            }
         }
         Div=`<div class='user-box1'>
             <input type="checkbox" id="OtherPrice${Count}" ${Clicked} class="Chee" onchange="ReCaluclateOthers()" />
@@ -650,7 +655,6 @@ function ShowResultDiv(BasicPrice,ValueB,Method00,WeightT,LengthT){
             Count++
         }
       }
-    Mval=0;
     }
   ResultDiv.style.display="flex";
   OtherPriceDiv.style.display="flex";
